@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { Container, Typography, Box, Tabs, Tab, Paper, Grid } from '@mui/material';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next'; // ===== CAMBIO 1: IMPORTAR EL HOOK =====
 
 // Importamos iconos para las áreas de enfoque
 import ScienceIcon from '@mui/icons-material/Science'; // STEAM
@@ -9,67 +10,60 @@ import MenuBookIcon from '@mui/icons-material/MenuBook'; // Humanidades
 import PaletteIcon from '@mui/icons-material/Palette'; // Artes
 import SportsSoccerIcon from '@mui/icons-material/SportsSoccer'; // Deportes
 
-// Contenido para cada nivel educativo
-const academicData = {
-  primaria: {
-    title: 'Educación Primaria: Cimientos del Descubrimiento',
-    description: 'En esta etapa fundamental, nos centramos en despertar la curiosidad y construir una base sólida de conocimientos y habilidades. Nuestro enfoque lúdico y práctico asegura que los niños amen aprender mientras exploran el mundo que les rodea.',
-    areas: [
-      { icon: <ScienceIcon />, title: 'Fundamentos STEAM', text: 'Introducción a la ciencia, la robótica y el pensamiento lógico a través de proyectos divertidos y experimentos prácticos.' },
-      { icon: <MenuBookIcon />, title: 'Lenguaje y Comunicación', text: 'Desarrollo de la lectoescritura, el amor por la literatura y la habilidad para expresar ideas con claridad y confianza.' },
-      { icon: <PaletteIcon />, title: 'Expresión Artística', text: 'Exploración de la música, el arte y el teatro para fomentar la creatividad, la sensibilidad y la autoexpresión.' },
-      { icon: <SportsSoccerIcon />, title: 'Desarrollo Físico y Social', text: 'A través del deporte y el juego en equipo, enseñamos valores como la colaboración, la disciplina y el respeto mutuo.' },
-    ]
-  },
-  secundaria: {
-    title: 'Educación Secundaria: Navegando hacia el Futuro',
-    description: 'Preparamos a los adolescentes para los desafíos del mañana, profundizando en el conocimiento académico y desarrollando habilidades críticas de liderazgo, resolución de problemas y pensamiento independiente.',
-    areas: [
-      { icon: <ScienceIcon />, title: 'STEAM Avanzado', text: 'Programas de robótica, programación, biología marina y física aplicada que preparan para carreras de alto impacto.' },
-      { icon: <MenuBookIcon />, title: 'Humanidades y Debate', text: 'Análisis crítico de la historia, la literatura y la filosofía, complementado con un club de debate para afinar la argumentación.' },
-      { icon: <PaletteIcon />, title: 'Artes y Medios Digitales', text: 'Cursos de diseño gráfico, producción audiovisual y música digital que conectan la creatividad con la tecnología.' },
-      { icon: <SportsSoccerIcon />, title: 'Liderazgo y Emprendimiento', text: 'Programas que fomentan la iniciativa, la gestión de proyectos y el desarrollo de habilidades de liderazgo.' },
-    ]
-  }
-};
+// ===== CAMBIO 2: EL OBJETO DE DATOS SE ELIMINA. AHORA SOLO MANTENEMOS LOS ICONOS. =====
+// Los iconos se mantendrán en el mismo orden que las "áreas" en los archivos JSON.
+const areaIcons = [
+  <ScienceIcon />,
+  <MenuBookIcon />,
+  <PaletteIcon />,
+  <SportsSoccerIcon />
+];
 
 const ProgramasPage = () => {
+  const { t } = useTranslation(); // ===== CAMBIO 3: INICIALIZAR EL HOOK =====
   const [activeTab, setActiveTab] = useState(0);
 
   const handleTabChange = (event, newValue) => {
     setActiveTab(newValue);
   };
 
-  const currentData = activeTab === 0 ? academicData.primaria : academicData.secundaria;
+  // ===== CAMBIO 4: OBTENER DATOS DIRECTAMENTE DESDE LAS TRADUCCIONES =====
+  // Usamos la key para determinar qué objeto de datos cargar.
+  const currentDataKey = activeTab === 0 ? 'programasPage.levels.primary' : 'programasPage.levels.secondary';
+  const currentData = t(currentDataKey, { returnObjects: true });
 
   return (
     <Box sx={{ py: 8, backgroundColor: 'background.light' }}>
       <Container maxWidth="lg">
         {/* Encabezado de la página */}
         <Typography variant="h3" component="h1" textAlign="center" gutterBottom sx={{ color: 'primary.main' }}>
-          Programas Académicos
+          {/* ===== CAMBIO 5: TRADUCIR TÍTULO ===== */}
+          {t('programasPage.pageTitle')}
         </Typography>
         <Typography variant="h6" textAlign="center" color="text.secondary" sx={{ mb: 6 }}>
-          Un viaje educativo diseñado para cada etapa del crecimiento.
+          {/* ===== CAMBIO 6: TRADUCIR SUBTÍTULO ===== */}
+          {t('programasPage.pageSubtitle')}
         </Typography>
 
         {/* Pestañas de Navegación (Tabs) */}
         <Box sx={{ borderBottom: 1, borderColor: 'divider', mb: 4 }}>
           <Tabs value={activeTab} onChange={handleTabChange} centered>
-            <Tab label="Educación Primaria" />
-            <Tab label="Educación Secundaria" />
+            {/* ===== CAMBIO 7: TRADUCIR ETIQUETAS DE LAS PESTAÑAS ===== */}
+            <Tab label={t('programasPage.tabPrimary')} />
+            <Tab label={t('programasPage.tabSecondary')} />
           </Tabs>
         </Box>
 
         {/* Contenido de la Pestaña Activa */}
         <motion.div
-          key={activeTab} // La key es crucial para que Framer Motion detecte el cambio y anime
+          key={activeTab}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
           <Paper elevation={0} sx={{ p: { xs: 2, sm: 4 }, borderRadius: '16px', backgroundColor: 'transparent' }}>
             <Typography variant="h4" component="h2" gutterBottom sx={{ color: 'primary.main' }}>
+              {/* Los datos ahora vienen del objeto 'currentData' ya traducido */}
               {currentData.title}
             </Typography>
             <Typography variant="body1" color="text.secondary" paragraph sx={{ lineHeight: 1.7 }}>
@@ -79,8 +73,12 @@ const ProgramasPage = () => {
               {currentData.areas.map((area, index) => (
                 <Grid item key={index} xs={12} sm={6}>
                   <Box sx={{ display: 'flex', alignItems: 'flex-start' }}>
-                    <Box sx={{ mr: 2, color: 'secondary.main' }}>{area.icon}</Box>
+                    <Box sx={{ mr: 2, color: 'secondary.main' }}>
+                      {/* ===== CAMBIO 8: ASIGNAR ICONO POR ÍNDICE ===== */}
+                      {areaIcons[index]}
+                    </Box>
                     <Box>
+                      {/* El título y texto vienen del objeto 'area' ya traducido */}
                       <Typography variant="h6" sx={{ fontWeight: 700 }}>{area.title}</Typography>
                       <Typography variant="body2" color="text.secondary">{area.text}</Typography>
                     </Box>

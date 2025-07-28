@@ -1,9 +1,10 @@
+/* eslint-disable no-unused-vars */
 import React, { useEffect } from 'react';
 import { Box } from '@mui/material';
 import { motion, AnimatePresence } from 'framer-motion';
 
-// ===== ¡AQUÍ ESTÁ LA NUEVA URL FUNCIONAL DEL LOGO! =====
-const logoUrl = 'https://i.ibb.co/prW8dKV3/logo.png';
+// 1. Importamos la nueva URL del logo desde nuestro archivo de constantes
+import { LOGO_URL_TRANSPARENT } from '../constants';
 
 const SplashScreen = ({ onLoaded }) => {
   useEffect(() => {
@@ -27,17 +28,22 @@ const SplashScreen = ({ onLoaded }) => {
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
-          backgroundColor: '#003366',
+          // 2. Usamos el color primario de nuestro tema
+          backgroundColor: 'primary.main',
           zIndex: 9999,
         }}
       >
         <motion.div
-          initial={{ opacity: 0, scale: 0.5 }}
+          initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
-          // ===== ¡AQUÍ ESTÁ EL ARREGLO DE LA ANIMACIÓN! =====
-          transition={{ duration: 1.5, ease: "easeOut" }} // Cambiamos la curva compleja por una estándar
+          transition={{ duration: 1.5, ease: "easeInOut" }}
         >
-          <img src={logoUrl} alt="Logo" style={{ width: '200px' }} />
+          {/* 3. Usamos la nueva constante para la URL del logo */}
+          <img 
+            src={LOGO_URL_TRANSPARENT} 
+            alt="Logo Colegio América de Atlantis" 
+            style={{ width: '250px', height: 'auto' }} // Hacemos el logo un poco más grande
+          />
         </motion.div>
       </Box>
     </AnimatePresence>

@@ -1,11 +1,11 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next'; // <-- HERRAMIENTA IMPORTADA
+import { useTranslation } from 'react-i18next'; 
 import { Box, Typography, Button, Container } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom';
 import { HERO_VIDEO_URL, LOGO_URL_TRANSPARENT } from '../constants';
 
 const Hero = () => {
-  const { t } = useTranslation(); // <-- HERRAMIENTA ACTIVADA
+  const { t } = useTranslation();
 
   return (
     <Box sx={{

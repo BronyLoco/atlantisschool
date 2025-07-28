@@ -1,55 +1,53 @@
 import React from 'react';
 import { Container, Typography, Box, Link } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom';
+import { useTranslation, Trans } from 'react-i18next'; // ===== CAMBIO 1: IMPORTAR HOOKS Y Trans =====
 
 const PrivacyPolicyPage = () => {
+  // ===== CAMBIO 2: INICIALIZAR HOOKS Y PREPARAR DATOS =====
+  const { t, i18n } = useTranslation();
+  const sections = t('privacyPolicyPage.sections', { returnObjects: true });
+  // Formatear la fecha según el idioma actual (ej: 'es' o 'en')
+  const lastUpdatedDate = new Date().toLocaleDateString(i18n.language);
+
   return (
-    // ===== CAMBIO 1: AÑADIMOS EL FONDO CONSISTENTE =====
     <Box sx={{ py: 8, backgroundColor: 'background.light' }}>
       <Container maxWidth="md">
-        <Typography 
-          variant="h3" 
-          component="h1" 
-          gutterBottom 
-          // ===== CAMBIO 2: USAMOS EL TEMA Y ELIMINAMOS LO REDUNDANTE =====
-          sx={{ color: 'primary.main' }}
-        >
-          Política de Privacidad
+        <Typography variant="h3" component="h1" gutterBottom sx={{ color: 'primary.main' }}>
+          {t('privacyPolicyPage.pageTitle')}
         </Typography>
         <Typography variant="subtitle1" color="text.secondary" sx={{ mb: 4 }}>
-          Última actualización: {new Date().toLocaleDateString('es-ES')}
+          {/* Usamos interpolación para la fecha dinámica */}
+          {t('privacyPolicyPage.lastUpdated', { date: lastUpdatedDate })}
         </Typography>
         
         <Typography variant="body1" paragraph>
-          En el Colegio América de Atlantis ("nosotros", "nuestro"), respetamos su privacidad y estamos comprometidos a proteger la información personal que comparte con nosotros. Esta Política de Privacidad explica cómo recopilamos, usamos y protegemos sus datos cuando visita nuestro sitio web.
+          {t('privacyPolicyPage.intro')}
         </Typography>
 
-        <Typography variant="h5" component="h2" gutterBottom sx={{ mt: 4, color: 'primary.main' }}>
-          1. Información que Recopilamos
-        </Typography>
-        <Typography variant="body1" paragraph>
-          Recopilamos datos que nos proporcionas directamente (al completar formularios) y datos recopilados automáticamente (a través de cookies y análisis anónimos para mejorar el sitio).
-        </Typography>
+        {/* ===== CAMBIO 3: GENERAR SECCIONES DINÁMICAMENTE ===== */}
+        {sections.map((section) => (
+          <Box key={section.title}>
+            <Typography variant="h5" component="h2" gutterBottom sx={{ mt: 4, color: 'primary.main' }}>
+              {section.title}
+            </Typography>
+            <Typography variant="body1" paragraph>
+              {section.paragraph}
+            </Typography>
+          </Box>
+        ))}
 
+        {/* ===== CAMBIO 4: MANEJAR LA SECCIÓN FINAL CON Trans ===== */}
         <Typography variant="h5" component="h2" gutterBottom sx={{ mt: 4, color: 'primary.main' }}>
-          2. Cómo Usamos tu Información
+          {t('privacyPolicyPage.contactSection.title')}
         </Typography>
         <Typography variant="body1" paragraph>
-          Utilizamos la información para responder a tus consultas, procesar admisiones y mejorar nuestro sitio web. Nunca vendemos tus datos.
-        </Typography>
-
-        <Typography variant="h5" component="h2" gutterBottom sx={{ mt: 4, color: 'primary.main' }}>
-          3. Seguridad de los Datos
-        </Typography>
-        <Typography variant="body1" paragraph>
-          Tomamos medidas razonables para proteger tu información personal contra el acceso no autorizado, la alteración o la destrucción.
-        </Typography>
-
-        <Typography variant="h5" component="h2" gutterBottom sx={{ mt: 4, color: 'primary.main' }}>
-          4. Contacto
-        </Typography>
-        <Typography variant="body1" paragraph>
-          Si tienes alguna pregunta sobre esta Política de Privacidad, puedes contactarnos a través de nuestra página de <Link component={RouterLink} to="/donde-estamos">Contacto</Link>.
+          <Trans
+            i18nKey="privacyPolicyPage.contactSection.paragraph"
+            components={{
+              contactLink: <Link component={RouterLink} to="/donde-estamos" />
+            }}
+          />
         </Typography>
       </Container>
     </Box>

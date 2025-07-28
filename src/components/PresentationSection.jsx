@@ -2,6 +2,7 @@ import React from 'react';
 import { Container, Typography, Grid, Box, Paper, Button } from '@mui/material';
 import { motion } from 'framer-motion';
 import { Link as RouterLink } from 'react-router-dom';
+import { useTranslation } from 'react-i18next'; // ===== CAMBIO 1: IMPORTAR EL HOOK =====
 
 // Importamos los iconos
 import SchoolIcon from '@mui/icons-material/School';
@@ -15,10 +16,11 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-const pillarsData = [
-  { icon: <SchoolIcon fontSize="large" />, title: 'Excelencia Académica', description: 'Un currículo riguroso que desafía a los estudiantes a alcanzar su máximo potencial intelectual.' },
-  { icon: <ExploreIcon fontSize="large" />, title: 'Innovación y Descubrimiento', description: 'Fomentamos la curiosidad y la exploración a través de un enfoque práctico en STEAM.' },
-  { icon: <GroupsIcon fontSize="large" />, title: 'Desarrollo Humano', description: 'Formamos líderes con integridad, empatía y un fuerte sentido de comunidad y compromiso social.' }
+// ===== CAMBIO 2: LOS DATOS DE TEXTO SE HAN MOVIDO A LOS JSON. AHORA SOLO GUARDAMOS LOS ICONOS. =====
+const pillarIcons = [
+  <SchoolIcon fontSize="large" />, 
+  <ExploreIcon fontSize="large" />, 
+  <GroupsIcon fontSize="large" />
 ];
 
 const carouselImages = [
@@ -39,10 +41,13 @@ const itemVariants = {
 };
 
 const PresentationSection = () => {
+  // ===== CAMBIO 3: USAR EL HOOK Y OBTENER LOS DATOS DEL JSON =====
+  const { t } = useTranslation();
+  const pillars = t('presentationSection.pillars', { returnObjects: true });
+
   return (
-    <Box sx={(theme) => ({ // Usamos la función para acceder al tema
+    <Box sx={(theme) => ({
       py: 10,
-      // ===== CAMBIO 1: GRADIENTE USANDO COLORES DEL TEMA =====
       background: `linear-gradient(to bottom, ${theme.palette.background.default}, ${theme.palette.background.light})`
     })}>
       <Container maxWidth="lg">
@@ -51,30 +56,35 @@ const PresentationSection = () => {
           <Grid item xs={12} md={6}>
             <motion.div initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
               
-              {/* ===== CAMBIO 2: COLOR DEL TEMA ===== */}
               <Typography variant="h6" sx={{ color: 'secondary.main', fontWeight: 700, textTransform: 'uppercase' }}>
-                Nuestra Filosofía
+                {/* ===== CAMBIO 4: TRADUCCIÓN DEL SUBTÍTULO ===== */}
+                {t('presentationSection.philosophy')}
               </Typography>
               
-              {/* ===== CAMBIO 3: COLOR DEL TEMA ===== */}
               <Typography
                 variant="h3"
                 component="h2"
                 sx={{ fontFamily: 'Playfair Display, serif', color: 'primary.main', fontWeight: 700, mb: 3 }}
               >
-                Un Océano de Saber
+                {/* ===== CAMBIO 5: TRADUCCIÓN DEL TÍTULO PRINCIPAL ===== */}
+                {t('presentationSection.title')}
               </Typography>
               
               <Typography variant="body1" paragraph sx={{ lineHeight: 1.7, color: 'text.secondary', mb: 4 }}>
-                En el Colegio América de Atlantis, no solo impartimos conocimiento, inspiramos la grandeza. Fusionamos la excelencia académica con una cultura de descubrimiento, preparando a nuestros alumnos para ser ciudadanos del mundo.
+                {/* ===== CAMBIO 6: TRADUCCIÓN DE LA DESCRIPCIÓN ===== */}
+                {t('presentationSection.description')}
               </Typography>
               
               <Box component={motion.div} variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-                {pillarsData.map((pillar, index) => (
+                {/* ===== CAMBIO 7: MAPEAR SOBRE LOS DATOS OBTENIDOS DEL JSON ===== */}
+                {pillars.map((pillar, index) => (
                   <Box component={motion.div} variants={itemVariants} key={index} sx={{ display: 'flex', alignItems: 'flex-start', mb: 3 }}>
-                    {/* ===== CAMBIO 4: COLOR DEL TEMA ===== */}
-                    <Box sx={{ mr: 2, color: 'primary.main' }}>{pillar.icon}</Box>
+                    <Box sx={{ mr: 2, color: 'primary.main' }}>
+                      {/* Asociamos el icono por su índice */}
+                      {pillarIcons[index]}
+                    </Box>
                     <Box>
+                      {/* Usamos el título y descripción del objeto 'pillar' traducido */}
                       <Typography variant="h6" sx={{ fontWeight: 700, fontFamily: 'Montserrat, sans-serif' }}>{pillar.title}</Typography>
                       <Typography variant="body2" color="text.secondary">{pillar.description}</Typography>
                     </Box>
@@ -87,10 +97,11 @@ const PresentationSection = () => {
                 to="/nuestra-mision"
                 variant="contained" 
                 size="large" 
-                color="secondary" // Usamos la prop de color para el botón
+                color="secondary"
                 sx={{ mt: 4, fontWeight: 700, color: 'primary.main' }}
               >
-                Conoce Nuestra Misión
+                {/* ===== CAMBIO 8: TRADUCCIÓN DEL TEXTO DEL BOTÓN ===== */}
+                {t('presentationSection.buttonText')}
               </Button>
             </motion.div>
           </Grid>
@@ -111,7 +122,8 @@ const PresentationSection = () => {
                   >
                     {carouselImages.map((imgUrl, index) => (
                       <SwiperSlide key={index}>
-                        <img src={imgUrl} alt={`Carrusel imagen ${index + 1}`} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                        {/* ===== CAMBIO 9: TRADUCCIÓN DEL TEXTO ALT CON INTERPOLACIÓN ===== */}
+                        <img src={imgUrl} alt={t('presentationSection.carouselAlt', { number: index + 1 })} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                       </SwiperSlide>
                     ))}
                   </Swiper>

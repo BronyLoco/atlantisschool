@@ -1,6 +1,12 @@
 {
   "navbar": {
     "about": "Sobre Nosotros",
+    "mission": "Nuestra Misión",
+    "teachers": "Docentes",
+    "gallery": "Galería",
+    "tour": "Tour Virtual",
+    "studentLife": "Vida Estudiantil",
+    "contact": "Donde Estamos",
     "programs": "Programas",
     "admissions": "Admisiones",
     "news": "Noticias",
@@ -12,5 +18,314 @@
     "slogan": "Descubre un océano de posibilidades.",
     "subtitle": "Innovación, excelencia y profundidad humana.",
     "ctaButton": "Inicia tu Aventura"
+  },
+  "presentationSection": {
+    "philosophy": "Nuestra Filosofía",
+    "title": "Un Océano de Saber",
+    "description": "En el Colegio América de Atlantis, no solo impartimos conocimiento, inspiramos la grandeza. Fusionamos la excelencia académica con una cultura de descubrimiento, preparando a nuestros alumnos para ser ciudadanos del mundo.",
+    "pillars": [
+      {
+        "title": "Excelencia Académica",
+        "description": "Un currículo riguroso que desafía a los estudiantes a alcanzar su máximo potencial intelectual."
+      },
+      {
+        "title": "Innovación y Descubrimiento",
+        "description": "Fomentamos la curiosidad y la exploración a través de un enfoque práctico en STEAM."
+      },
+      {
+        "title": "Desarrollo Humano",
+        "description": "Formamos líderes con integridad, empatía y un fuerte sentido de comunidad y compromiso social."
+      }
+    ],
+    "buttonText": "Conoce Nuestra Misión",
+    "carouselAlt": "Imagen del carrusel {{number}}"
+  },
+  "programasPage": {
+    "pageTitle": "Programas Académicos",
+    "pageSubtitle": "Un viaje educativo diseñado para cada etapa del crecimiento.",
+    "tabPrimary": "Educación Primaria",
+    "tabSecondary": "Educación Secundaria",
+    "levels": {
+      "primary": {
+        "title": "Educación Primaria: Cimientos del Descubrimiento",
+        "description": "En esta etapa fundamental, nos centramos en despertar la curiosidad y construir una base sólida de conocimientos y habilidades. Nuestro enfoque lúdico y práctico asegura que los niños amen aprender mientras exploran el mundo que les rodea.",
+        "areas": [
+          { "title": "Fundamentos STEAM", "text": "Introducción a la ciencia, la robótica y el pensamiento lógico a través de proyectos divertidos y experimentos prácticos." },
+          { "title": "Lenguaje y Comunicación", "text": "Desarrollo de la lectoescritura, el amor por la literatura y la habilidad para expresar ideas con claridad y confianza." },
+          { "title": "Expresión Artística", "text": "Exploración de la música, el arte y el teatro para fomentar la creatividad, la sensibilidad y la autoexpresión." },
+          { "title": "Desarrollo Físico y Social", "text": "A través del deporte y el juego en equipo, enseñamos valores como la colaboración, la disciplina y el respeto mutuo." }
+        ]
+      },
+      "secondary": {
+        "title": "Educación Secundaria: Navegando hacia el Futuro",
+        "description": "Preparamos a los adolescentes para los desafíos del mañana, profundizando en el conocimiento académico y desarrollando habilidades críticas de liderazgo, resolución de problemas y pensamiento independiente.",
+        "areas": [
+          { "title": "STEAM Avanzado", "text": "Programas de robótica, programación, biología marina y física aplicada que preparan para carreras de alto impacto." },
+          { "title": "Humanidades y Debate", "text": "Análisis crítico de la historia, la literatura y la filosofía, complementado con un club de debate para afinar la argumentación." },
+          { "title": "Artes y Medios Digitales", "text": "Cursos de diseño gráfico, producción audiovisual y música digital que conectan la creatividad con la tecnología." },
+          { "title": "Liderazgo y Emprendimiento", "text": "Programas que fomentan la iniciativa, la gestión de proyectos y el desarrollo de habilidades de liderazgo." }
+        ]
+      }
+    }
+  },
+  "misionPage": {
+    "pageTitle": "Nuestra Esencia",
+    "pageSubtitle": "Los principios que guían cada paso de nuestro viaje educativo.",
+    "missionTitle": "Misión",
+    "missionText": "Brindar una educación integral de excelencia, fomentando la curiosidad intelectual, la integridad ética y el compromiso social, para que cada estudiante descubra y desarrolle su máximo potencial en un entorno globalizado.",
+    "visionTitle": "Visión",
+    "visionText": "Ser un referente educativo reconocido por nuestra innovación pedagógica y por formar ciudadanos del mundo, capaces de liderar con sabiduría, creatividad y empatía.",
+    "valuesTitle": "Nuestros Valores Fundamentales",
+    "valuesList": [
+      {
+        "title": "Excelencia",
+        "description": "La búsqueda constante de la superación académica y personal."
+      },
+      {
+        "title": "Innovación",
+        "description": "Fomentar la curiosidad, el descubrimiento y la pasión por aprender."
+      },
+      {
+        "title": "Integridad",
+        "description": "Actuar con honestidad, respeto y responsabilidad en todo momento."
+      },
+      {
+        "title": "Comunidad",
+        "description": "Construir lazos sólidos basados en la colaboración y el apoyo mutuo."
+      }
+    ]
+  },
+   "galeriaPage": {
+    "pageTitle": "Galería: La Vida en Atlantis",
+    "pageSubtitle": "Una ventana a nuestra comunidad, nuestras instalaciones y los momentos que nos definen.",
+    "filters": {
+      "all": "Todo",
+      "facilities": "Instalaciones",
+      "studentLife": "Vida Estudiantil",
+      "events": "Eventos"
+    },
+    "imageList": [
+      { "category": "facilities", "title": "Biblioteca Central" },
+      { "category": "studentLife", "title": "Clase de Laboratorio" },
+      { "category": "events", "title": "Trabajo en Equipo" },
+      { "category": "facilities", "title": "Auditorio Principal" },
+      { "category": "studentLife", "title": "Graduación" },
+      { "category": "facilities", "title": "Canchas Deportivas" },
+      { "category": "studentLife", "title": "Taller de Arte" },
+      { "category": "events", "title": "Feria de Ciencias" }
+    ]
+  },
+  "tourPage": {
+    "pageTitle": "Tour Virtual 360°",
+    "pageSubtitle": "Explora las instalaciones del Colegio América de Atlantis desde donde estés. Haz clic y arrastra para moverte.",
+    "iframeTitle": "Visor del Tour Virtual de Atlantis",
+    "highlightsTitle": "Puntos Destacados del Campus",
+    "highlightsList": [
+      {
+        "title": "Biblioteca del Saber",
+        "description": "Un espacio moderno con miles de volúmenes y recursos digitales."
+      },
+      {
+        "title": "Laboratorios de Innovación",
+        "description": "Equipados con la última tecnología para nuestros programas STEAM."
+      },
+      {
+        "title": "Áreas Comunes y Jardines",
+        "description": "Espacios diseñados para la colaboración, el descanso y la inspiración."
+      }
+    ],
+    "ctaTitle": "¿Impresionado? Da el siguiente paso.",
+    "ctaButton": "Ir a Admisiones"
+  },
+  "teachersPage": {
+    "pageTitle": "Nuestros Guías del Saber",
+    "pageSubtitle": "Un equipo de mentores apasionados, dedicados a iluminar el camino de cada estudiante.",
+    "altText": "Fotografía de {{name}}",
+    "ariaLinkedIn": "Perfil de LinkedIn de {{name}}",
+    "ariaEmail": "Enviar un correo a {{name}}",
+    "teacherList": [
+      { "name": "Alejandro Anselmo Huanca Aldapi", "title": "Coordinador de Ciencias y Exploración", "quote": "\"El océano es el libro de texto más antiguo; solo hay que aprender a leerlo.\"" },
+      { "name": "Cristian Alexander Ruiz Gareca", "title": "Especialista en Humanidades", "quote": "\"Cada historia es un viaje al corazón de lo que nos hace humanos.\"" },
+      { "name": "Jhoselyn Fernandez Ojeda", "title": "Líder de Innovación (STEAM)", "quote": "\"La creatividad es la inteligencia divirtiéndose. Aquí, jugamos con el futuro.\"" },
+      { "name": "Pablo Ivar Gallardo Sánchez", "title": "Director de Bienestar Estudiantil", "quote": "\"La verdadera fuerza se mide en el carácter, no solo en el campo de juego.\"" },
+      { "name": "Dante Emanuel Arias Tarifa", "title": "Jefe de Artes y Expresión", "quote": "\"El arte no es lo que ves, sino lo que haces que otros vean.\"" },
+      { "name": "Gabriel Elmer Quiroga Pereyra", "title": "Especialista en Matemáticas", "quote": "\"Las matemáticas son el lenguaje con el que el universo está escrito.\"" }
+    ]
+  },
+  "vidaEstudiantilPage": {
+    "pageTitle": "Vida Estudiantil",
+    "pageSubtitle": "Descubre el corazón de nuestra comunidad: un lugar para crecer, competir y crear.",
+    "altText": "Imagen de {{title}}",
+    "sectionsList": [
+      {
+        "title": "Clubes y Organizaciones",
+        "description": "Fomentamos las pasiones y el liderazgo más allá del aula. Nuestros clubes son espacios vibrantes donde los estudiantes exploran sus intereses, colaboran en proyectos y desarrollan habilidades para toda la vida.",
+        "points": [
+          "Club de Robótica Marina \"Nautilus\"",
+          "Equipo de Debate \"Los Argonautas\"",
+          "Sociedad de Ciencias y Astronomía",
+          "Taller de Arte y Medios Digitales"
+        ]
+      },
+      {
+        "title": "Deportes y Bienestar",
+        "description": "Creemos en el principio de \"mente sana en cuerpo sano\". Nuestros programas deportivos no solo buscan la excelencia competitiva, sino también enseñar valores como la disciplina, la resiliencia y el trabajo en equipo.",
+        "points": [
+          "Equipos de Fútbol y Baloncesto",
+          "Clases de Natación y Atletismo",
+          "Programa de Yoga y Mindfulness",
+          "Torneos Intercolegiales Anuales"
+        ]
+      },
+      {
+        "title": "Eventos y Tradiciones",
+        "description": "La vida en Atlantis está llena de momentos memorables que unen a nuestra comunidad. Desde ferias científicas hasta conciertos, cada evento es una oportunidad para celebrar nuestros logros y nuestra diversidad.",
+        "points": [
+          "Feria Anual de Ciencias e Innovación",
+          "Semana de las Culturas del Mundo",
+          "Conciertos de Temporada",
+          "Jornadas de Voluntariado y Acción Social"
+        ]
+      }
+    ]
+  },
+   "admissionsPage": {
+    "pageTitle": "Tu Viaje Hacia Atlantis",
+    "pageSubtitle": "Un proceso claro y personal en cuatro pasos clave.",
+    "videoAriaLabel": "Video de fondo con estudiantes colaborando",
+    "stepsList": [
+      { "title": "1. Envía tu Solicitud", "description": "Completa nuestro formulario en línea para iniciar esta gran aventura." },
+      { "title": "2. Entrevista Familiar", "description": "Agendaremos una reunión con los padres y el aspirante para conocernos." },
+      { "title": "3. Evaluación de Potencial", "description": "Realizamos una evaluación diagnóstica para identificar las habilidades del estudiante." },
+      { "title": "4. Bienvenida a Atlantis", "description": "El comité comunicará los resultados. ¡Esperamos darte la bienvenida!" }
+    ],
+    "documentsTitle": "Documentación",
+    "documentsSubtitle": "Si prefieres gestionar la documentación en papel, puedes descargar los siguientes formularios.",
+    "documentsLinkText": "Formulario de Inscripción (PDF)",
+    "formTitle": "Solicita una Entrevista",
+    "formSubtitle": "Completa el siguiente formulario para dar el primer paso. Nuestro equipo se pondrá en contacto a la brevedad.",
+    "formFields": {
+      "parentName": "Nombre del Padre/Tutor",
+      "studentName": "Nombre del Estudiante",
+      "email": "Correo Electrónico",
+      "phone": "Teléfono de Contacto"
+    },
+    "submitButton": "Enviar Solicitud",
+    "successAlert": {
+      "title": "¡Solicitud Recibida!",
+      "message": "Gracias por tu interés. Nos pondremos en contacto contigo en las próximas 48 horas."
+    }
+  },
+   "noticiasPage": {
+    "pageTitle": "Diario de Descubrimientos",
+    "pageSubtitle": "Mantente al día con las últimas noticias, logros y actividades de nuestra vibrante comunidad.",
+    "readMoreButton": "Leer más",
+    "altText": "Imagen para la noticia: {{title}}",
+    "filters": {
+      "all": "Todos",
+      "science": "Ciencia y Descubrimiento",
+      "activities": "Actividades",
+      "achievements": "Logros"
+    },
+    "newsList": [
+      { "categoryKey": "science", "title": "Estudiantes de Atlantis Descubren Cómo Generar Fuego Bajo el Agua", "excerpt": "Desafiando las leyes de la física, un equipo de nuestros alumnos de química avanzada ha logrado una combustión sostenida en un medio acuático.", "date": "Octubre 28, 2024" },
+      { "categoryKey": "achievements", "title": "El Equipo de Debate \"Los Argonautas\" Gana el Torneo Nacional", "excerpt": "Nuestro brillante equipo de debate se ha coronado campeón nacional tras una final electrizante. Su elocuencia y argumentación demostraron la excelencia de Atlantis.", "date": "Octubre 22, 2024" },
+      { "categoryKey": "activities", "title": "Nuestra Feria Anual de Culturas del Mundo Rompe Récords", "excerpt": "Con más de 30 países representados, la Feria de Culturas 2024 fue un éxito rotundo, celebrando la diversidad de nuestra comunidad con comida, música y tradiciones.", "date": "Octubre 15, 2024" },
+      { "categoryKey": "science", "title": "Proyecto de Robótica Marina Mapea el Fondo de un Lago Local", "excerpt": "El club de robótica presenta su dron submarino autónomo, \"Nereus I\", capaz de crear mapas 3D de ecosistemas acuáticos.", "date": "Octubre 10, 2024" },
+      { "categoryKey": "activities", "title": "Concierto de Temporada: Una Noche de Talentos Musicales", "excerpt": "La orquesta y el coro del colegio ofrecieron un concierto inolvidable, demostrando el increíble talento artístico de nuestros estudiantes.", "date": "Octubre 5, 2024" },
+      { "categoryKey": "achievements", "title": "Alumna de Atlantis Gana Olimpiada Nacional de Matemáticas", "excerpt": "Felicitamos a Sofía Vargas por obtener la medalla de oro en la competencia nacional, un testimonio de su brillantez y dedicación.", "date": "Septiembre 29, 2024" },
+      { "categoryKey": "activities", "title": "Jornada de Reforestación en el Parque Natural", "excerpt": "Nuestros estudiantes participaron en una jornada de voluntariado, plantando más de 200 árboles y reafirmando nuestro compromiso con el medio ambiente.", "date": "Septiembre 20, 2024" }
+    ]
+  },
+   "calendarioPage": {
+    "pageTitle": "Calendario Académico",
+    "pageSubtitle": "Aquí encontrarás todas las fechas importantes, eventos y periodos de vacaciones de nuestro año escolar.",
+    "iframeTitle": "Visor del Calendario Académico del Colegio América de Atlantis"
+  },
+   "faqPage": {
+    "pageTitle": "Navegando tus Dudas",
+    "pageSubtitle": "Aquí respondemos algunas de las preguntas más comunes sobre nuestro colegio.",
+    "faqList": [
+      { "id": "faq1", "question": "¿Cuál es la filosofía del Colegio América de Atlantis?", "answer": "Nuestra filosofía se basa en la idea de un 'Océano de Saber', donde inspiramos a nuestros alumnos a alcanzar su grandeza a través del aprendizaje, el descubrimiento y la exploración profunda." },
+      { "id": "faq2", "question": "¿Cómo puedo inscribir a mi hijo en el colegio?", "answer": "Para iniciar el proceso de inscripción, por favor visita nuestra página de 'Admisiones' donde encontrarás toda la información y los formularios necesarios. Puedes acceder directamente haciendo clic aquí: <admisionesLink>Página de Admisiones</admisionesLink>." },
+      { "id": "faq3", "question": "¿Qué valores se enseñan en el colegio?", "answer": "Enseñamos valores fundamentales como la integridad, el respeto, la excelencia y el compromiso comunitario, esenciales para formar ciudadanos del mundo, responsables y empáticos." },
+      { "id": "faq4", "question": "¿Qué programas STEAM se ofrecen?", "answer": "Implementamos programas que integran Ciencia, Tecnología, Ingeniería, Artes y Matemáticas. Nuestro enfoque busca fomentar el dominio tecnológico, la resolución creativa de problemas y la innovación." },
+      { "id": "faq5", "question": "¿Dónde se encuentra el Colegio América de Atlantis?", "answer": "Puedes encontrar nuestra ubicación conceptual y toda la información de contacto en la sección 'Donde Estamos' de nuestro sitio web. Accede directamente aquí: <ubicacionLink>Ver Ubicación y Contacto</ubicacionLink>." },
+      { "id": "faq6", "question": "¿Qué actividades extracurriculares se ofrecen?", "answer": "Ofrecemos una amplia gama de actividades que incluyen robótica, debate, club de ciencias marinas, deportes de equipo y talleres de arte. Creemos que el aprendizaje se extiende más allá del aula para un desarrollo integral." },
+      { "id": "faq7", "question": "¿Cómo se promueve el desarrollo emocional en los estudiantes?", "answer": "Fomentamos la inteligencia emocional a través de un programa de bienestar estudiantil, mentorías y actividades colaborativas que desarrollan habilidades clave como el liderazgo, la resiliencia y el trabajo en equipo." }
+    ],
+    "contactBox": {
+      "title": "¿Aún tienes preguntas?",
+      "subtitle": "Nuestro equipo está listo para ayudarte. Conéctate con nosotros a través de nuestros canales oficiales.",
+      "socials": {
+        "linkedin": "LinkedIn",
+        "instagram": "Instagram",
+        "facebook": "Facebook",
+        "whatsapp": "WhatsApp"
+      }
+    }
+  },
+   "footer": {
+    "socialsAriaLabel": {
+      "linkedin": "Visita nuestro perfil de LinkedIn",
+      "instagram": "Visita nuestro perfil de Instagram",
+      "facebook": "Visita nuestra página de Facebook",
+      "whatsapp": "Contáctanos por WhatsApp"
+    },
+    "contactInfo": {
+      "address": "Av. Exploradores del Saber, 123",
+      "phone": "+34 123 456 789"
+    },
+    "copyright": "© {{year}} Colegio América de Atlantis. Todos los derechos reservados.",
+    "privacyPolicy": "Política de Privacidad"
+  },
+   "privacyPolicyPage": {
+    "pageTitle": "Política de Privacidad",
+    "lastUpdated": "Última actualización: {{date}}",
+    "intro": "En el Colegio América de Atlantis (\"nosotros\", \"nuestro\"), respetamos su privacidad y estamos comprometidos a proteger la información personal que comparte con nosotros. Esta Política de Privacidad explica cómo recopilamos, usamos y protegemos sus datos cuando visita nuestro sitio web.",
+    "sections": [
+      {
+        "title": "1. Información que Recopilamos",
+        "paragraph": "Recopilamos datos que nos proporcionas directamente (al completar formularios) y datos recopilados automáticamente (a través de cookies y análisis anónimos para mejorar el sitio)."
+      },
+      {
+        "title": "2. Cómo Usamos tu Información",
+        "paragraph": "Utilizamos la información para responder a tus consultas, procesar admisiones y mejorar nuestro sitio web. Nunca vendemos tus datos."
+      },
+      {
+        "title": "3. Seguridad de los Datos",
+        "paragraph": "Tomamos medidas razonables para proteger tu información personal contra el acceso no autorizado, la alteración o la destrucción."
+      }
+    ],
+    "contactSection": {
+      "title": "4. Contacto",
+      "paragraph": "Si tienes alguna pregunta sobre esta Política de Privacidad, puedes contactarnos a través de nuestra página de <contactLink>Contacto</contactLink>."
+    }
+  },
+   "dondeEstamosPage": {
+    "iframeTitle": "Mapa interactivo mostrando la ubicación del Colegio América de Atlantis",
+    "floatingCard": {
+      "title": "Nuestra Isla del Saber",
+      "subtitle": "Encuentra nuestras coordenadas y los canales para comunicarte con nosotros.",
+      "email": "contacto@colegioatlantis.com",
+      "phone": "+34 123 456 789",
+      "hours": "Siempre abiertos al conocimiento"
+    }
+  },
+  "loginPage": {
+    "pageTitle": "Portal de Acceso",
+    "pageSubtitle": "Bienvenido a tu comunidad Atlantis.",
+    "form": {
+      "emailLabel": "Correo Electrónico",
+      "passwordLabel": "Contraseña",
+      "rememberMe": "Recordarme",
+      "submitButton": "Iniciar Sesión",
+      "forgotPassword": "¿Olvidaste tu contraseña?"
+    },
+    "alert": {
+      "title": "Simulación de Login:",
+      "userLabel": "Usuario:",
+      "passwordLabel": "Contraseña:"
+    }
   }
 }

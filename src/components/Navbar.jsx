@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useTranslation } from 'react-i18next'; // <-- 1. IMPORTA LA HERRAMIENTA
+import { useTranslation } from 'react-i18next';
 import { AppBar, Toolbar, Button, Box, Menu, MenuItem } from '@mui/material';
 import { NavLink, Link as RouterLink } from 'react-router-dom';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
@@ -7,7 +7,7 @@ import { LOGO_URL_WHITE_TRANSPARENT } from '../constants';
 import LanguageSwitcher from './LanguageSwitcher';
 
 const Navbar = () => {
-  const { t } = useTranslation(); // <-- 2. ACTIVA LA HERRAMIENTA
+  const { t } = useTranslation();
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
 
@@ -21,17 +21,16 @@ const Navbar = () => {
         <NavLink to="/"><img src={LOGO_URL_WHITE_TRANSPARENT} alt="Logo" style={{ height: '55px', display: 'block' }} /></NavLink>
         
         <Box>
-          {/* ===== 3. TRADUCE CADA BOTÓN ===== */}
           <Button onClick={handleMenuClick} endIcon={<ArrowDropDownIcon />} sx={{ color: 'white' }}>
             {t('navbar.about')}
           </Button>
           <Menu anchorEl={anchorEl} open={open} onClose={handleMenuClose}>
-            {/* El texto de los items del menú también se debe traducir, pero lo dejaremos para después para simplificar */}
-            <MenuItem onClick={handleMenuClose} component={NavLink} to="/nuestra-mision">Nuestra Misión</MenuItem>
-            <MenuItem onClick={handleMenuClose} component={NavLink} to="/docentes">Docentes</MenuItem>
-            <MenuItem onClick={handleMenuClose} component={NavLink} to="/galeria">Galería</MenuItem>
-            <MenuItem onClick={handleMenuClose} component={NavLink} to="/tour-virtual">Tour Virtual</MenuItem>
-            <MenuItem onClick={handleMenuClose} component={NavLink} to="/vida-estudiantil">Vida Estudiantil</MenuItem>
+            {/* AHORA LOS ITEMS DEL MENÚ TAMBIÉN ESTÁN TRADUCIDOS */}
+            <MenuItem onClick={handleMenuClose} component={NavLink} to="/nuestra-mision">{t('navbar.mission')}</MenuItem>
+            <MenuItem onClick={handleMenuClose} component={NavLink} to="/docentes">{t('navbar.teachers')}</MenuItem>
+            <MenuItem onClick={handleMenuClose} component={NavLink} to="/galeria">{t('navbar.gallery')}</MenuItem>
+            <MenuItem onClick={handleMenuClose} component={NavLink} to="/tour-virtual">{t('navbar.tour')}</MenuItem>
+            <MenuItem onClick={handleMenuClose} component={NavLink} to="/vida-estudiantil">{t('navbar.studentLife')}</MenuItem>
           </Menu>
           
           <Button component={NavLink} to="/programas-academicos" sx={{ color: 'white', '&.active': { color: 'secondary.main' } }}>
@@ -46,6 +45,12 @@ const Navbar = () => {
           <Button component={NavLink} to="/calendario" sx={{ color: 'white', '&.active': { color: 'secondary.main' } }}>
             {t('navbar.calendar')}
           </Button>
+          
+          {/* ===== ¡ENLACE REINCORPORADO Y TRADUCIDO! ===== */}
+          <Button component={NavLink} to="/donde-estamos" sx={{ color: 'white', '&.active': { color: 'secondary.main' } }}>
+            {t('navbar.contact')}
+          </Button>
+
           <Button component={NavLink} to="/faq" sx={{ color: 'white', '&.active': { color: 'secondary.main' } }}>
             {t('navbar.faq')}
           </Button>

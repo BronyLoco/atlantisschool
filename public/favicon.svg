@@ -1,14 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 80">
-  <!-- La Ola - Color Azul Atlantis -->
-  <path fill="#003366" d="M50,0 C22.4,0 0,22.4 0,50 C0,77.6 22.4,100 50,100 C50,70 70,50 100,50 C100,22.4 77.6,0 50,0 Z" transform="translate(0, -10) scale(1, 0.8)"/>
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Capa de Fondo (Negro para ver el diseño, pero es transparente) -->
+  <rect width="100" height="100" fill="none" />
   
-  <!-- Las Páginas del Libro - Color Oro del Descubrimiento -->
-  <g fill="#f0b429" transform="translate(0, -10)">
-    <path d="M55,45 L100,10 L90,50 Z"/>
-    <path d="M55,45 L100,20 L95,55 Z"/>
-    <path d="M55,45 L100,30 L100,60 Z"/>
-    <path d="M55,45 L100,40 L105,65 Z"/>
-    <path d="M55,45 L95,45 L110,70 Z"/>
-    <path d="M55,45 L90,50 L115,75 Z"/>
-  </g>
+  <!-- Escudo Exterior (Dorado) -->
+  <path d="M10 10 H90 L90 50 C90 80, 50 100, 50 100 C50 100, 10 80, 10 50 Z" 
+        fill="#f0b429" stroke="#f0b429" stroke-width="8" />
+  
+  <!-- Escudo Interior (Azul) -->
+  <path d="M20 20 H80 L80 50 C80 75, 50 90, 50 90 C50 90, 20 75, 20 50 Z" 
+        fill="#003366" />
+        
+  <!-- Olas (Blanco para contraste) -->
+  <path d="M25,70 Q37.5,60 50,70 T75,70" stroke="white" stroke-width="4" fill="none" />
+  <path d="M25,78 Q37.5,68 50,78 T75,78" stroke="white" stroke-width="4" fill="none" />
+
+  <!-- Libro (Blanco para contraste) -->
+  <path d="M40 35 H60 V55 A10 10 0 0 1 50 65 A10 10 0 0 1 40 55 Z" fill="white" />
+  <line x1="40" y1="40" x2="60" y2="40" stroke="#003366" stroke-width="3" />
 </svg>

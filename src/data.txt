@@ -1,2 +1,5 @@
 logo1 https://i.ibb.co/prW8dKV3/logo.png
 https://plainbibleteaching.com/wp-content/uploads/2014/09/sunlight-ocean1.jpg
+<img src="https://i.ibb.co/8L86djXN/LOGO-NEGATIVO.png" alt="LOGO-NEGATIVO" border="0">
+<img src="https://i.ibb.co/b5h4zn2q/LOGO-POSITIVO.png" alt="LOGO-POSITIVO" border="0">
+<img src="https://i.ibb.co/Q7dyLW4P/LOGO-1.png" alt="LOGO-1" border="0">
