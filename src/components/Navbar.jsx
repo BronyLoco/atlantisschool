@@ -16,16 +16,25 @@ const Navbar = () => {
 
   return (
     <AppBar position="sticky" elevation={0} sx={{ backgroundColor: 'rgba(0, 51, 102, 0.85)', backdropFilter: 'blur(10px)', borderBottom: '1px solid rgba(255, 255, 255, 0.1)' }}>
-      <Toolbar sx={{ justifyContent: 'space-between', py: 1 }}>
+      {/* El Toolbar sigue siendo el contenedor principal */}
+      <Toolbar sx={{ py: 1 }}>
         
+        {/* LOGO (Izquierda) - Sin cambios */}
         <NavLink to="/"><img src={LOGO_URL_WHITE_TRANSPARENT} alt="Logo" style={{ height: '55px', display: 'block' }} /></NavLink>
         
-        <Box>
+        {/* ===== LA SOLUCIÓN CLAVE ESTÁ AQUÍ ===== */}
+        {/* 1. Envolvemos todos tus enlaces de navegación en un nuevo Box. */}
+        <Box sx={{ 
+          flexGrow: 1,                 // 2. Le decimos que ocupe todo el espacio central disponible.
+          display: 'flex',             // 3. Lo convertimos en un contenedor flex.
+          justifyContent: 'center',    // 4. Centramos sus hijos (los botones).
+          alignItems: 'center'
+        }}>
+          {/* Tus enlaces de navegación originales van DENTRO de este nuevo Box, sin ningún cambio */}
           <Button onClick={handleMenuClick} endIcon={<ArrowDropDownIcon />} sx={{ color: 'white' }}>
             {t('navbar.about')}
           </Button>
           <Menu anchorEl={anchorEl} open={open} onClose={handleMenuClose}>
-            {/* AHORA LOS ITEMS DEL MENÚ TAMBIÉN ESTÁN TRADUCIDOS */}
             <MenuItem onClick={handleMenuClose} component={NavLink} to="/nuestra-mision">{t('navbar.mission')}</MenuItem>
             <MenuItem onClick={handleMenuClose} component={NavLink} to="/docentes">{t('navbar.teachers')}</MenuItem>
             <MenuItem onClick={handleMenuClose} component={NavLink} to="/galeria">{t('navbar.gallery')}</MenuItem>
@@ -46,7 +55,6 @@ const Navbar = () => {
             {t('navbar.calendar')}
           </Button>
           
-          {/* ===== ¡ENLACE REINCORPORADO Y TRADUCIDO! ===== */}
           <Button component={NavLink} to="/donde-estamos" sx={{ color: 'white', '&.active': { color: 'secondary.main' } }}>
             {t('navbar.contact')}
           </Button>
@@ -56,6 +64,7 @@ const Navbar = () => {
           </Button>
         </Box>
         
+        {/* ELEMENTOS DE LA DERECHA - Sin cambios */}
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
           <Button 
             component={RouterLink}
