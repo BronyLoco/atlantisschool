@@ -2,7 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next'; 
 import { Box, Typography, Button, Container } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom';
-import { HERO_VIDEO_URL, LOGO_URL_TRANSPARENT } from '../constants';
+import { HERO_VIDEO_URL, LOGO_URL_WHITE_TRANSPARENT } from '../constants';
 
 const Hero = () => {
   const { t } = useTranslation();
@@ -20,7 +20,7 @@ const Hero = () => {
       <Container sx={{ position: 'relative' }}>
         <Box mb={4}>
           <img 
-            src={LOGO_URL_TRANSPARENT} 
+            src={LOGO_URL_WHITE_TRANSPARENT} 
             alt="Logo del Colegio América de Atlantis" 
             style={{ width: '150px', height: 'auto' }} 
           />
