@@ -1,64 +1,58 @@
 import React from 'react';
 import { Container, Typography, Box, Accordion, AccordionSummary, AccordionDetails, Link } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { Link as RouterLink } from 'react-router-dom';
+import { LINKEDIN_URL, FACEBOOK_URL, INSTAGRAM_URL, WHATSAPP_URL } from '../constants';
 
-// Importamos los iconos para la caja de contacto
+// Importamos los iconos
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
-// Datos para las preguntas frecuentes
+// Los datos de faqData no cambian
 const faqData = [
-  {
-    id: 'faq1',
-    question: '¿Cuál es el proceso de admisión?',
-    answer: 'Nuestro proceso consta de cuatro pasos: 1) Envío de la solicitud en línea, 2) Entrevista familiar para conocernos, 3) Evaluación de potencial del estudiante, y 4) Comunicación de resultados. Puedes encontrar más detalles en nuestra página de Admisiones.'
-  },
-  {
-    id: 'faq2',
-    question: '¿Qué enfoque educativo tiene el colegio?',
-    answer: 'En el Colegio América de Atlantis, fusionamos una sólida excelencia académica con un enfoque en el descubrimiento y la innovación (STEAM). Fomentamos el pensamiento crítico, la creatividad y el desarrollo de habilidades de liderazgo en un entorno global y colaborativo.'
-  },
-  {
-    id: 'faq3',
-    question: '¿Ofrecen actividades extracurriculares?',
-    answer: '¡Sí! Ofrecemos una amplia gama de actividades que incluyen robótica, debate, club de ciencias marinas, deportes de equipo y talleres de arte. Creemos que el aprendizaje se extiende más allá del aula para un desarrollo integral.'
-  }
+  { id: 'faq1', question: '¿Cuál es la filosofía del Colegio América de Atlantis?', answer: 'Nuestra filosofía se basa en la idea de un \'Océano de Saber\', donde inspiramos a nuestros alumnos a alcanzar su grandeza a través del aprendizaje, el descubrimiento y la exploración profunda.' },
+  { id: 'faq2', question: '¿Cómo puedo inscribir a mi hijo en el colegio?', answer: (<>Para iniciar el proceso de inscripción, por favor visita nuestra página de \'Admisiones\' donde encontrarás toda la información y los formularios necesarios. Puedes acceder directamente haciendo clic aquí: <Link component={RouterLink} to="/admisiones" underline="hover">Página de Admisiones</Link>.</>) },
+  { id: 'faq3', question: '¿Qué valores se enseñan en el colegio?', answer: 'Enseñamos valores fundamentales como la integridad, el respeto, la excelencia y el compromiso comunitario, esenciales para formar ciudadanos del mundo, responsables y empáticos.' },
+  { id: 'faq4', question: '¿Qué programas STEAM se ofrecen?', answer: 'Implementamos programas que integran Ciencia, Tecnología, Ingeniería, Artes y Matemáticas. Nuestro enfoque busca fomentar el dominio tecnológico, la resolución creativa de problemas y la innovación.' },
+  { id: 'faq5', question: '¿Dónde se encuentra el Colegio América de Atlantis?', answer: (<>Puedes encontrar nuestra ubicación conceptual y toda la información de contacto en la sección \'Donde Estamos\' de nuestro sitio web. Accede directamente aquí: <Link component={RouterLink} to="/donde-estamos" underline="hover">Ver Ubicación y Contacto</Link>.</>) },
+  { id: 'faq6', question: '¿Qué actividades extracurriculares se ofrecen?', answer: 'Ofrecemos una amplia gama de actividades que incluyen robótica, debate, club de ciencias marinas, deportes de equipo y talleres de arte. Creemos que el aprendizaje se extiende más allá del aula para un desarrollo integral.' },
+  { id: 'faq7', question: '¿Cómo se promueve el desarrollo emocional en los estudiantes?', answer: 'Fomentamos la inteligencia emocional a través de un programa de bienestar estudiantil, mentorías y actividades colaborativas que desarrollan habilidades clave como el liderazgo, la resiliencia y el trabajo en equipo.' },
 ];
 
 const FaqPage = () => {
   return (
-    <Box sx={{ py: 8 }}>
+    <Box sx={{ py: 8, backgroundColor: 'background.light' }}> {/* Usando el tema */}
       <Container maxWidth="md">
-        {/* Encabezado de la página */}
         <Typography 
           variant="h3" 
           component="h1" 
           textAlign="center"
           gutterBottom
-          sx={{ fontFamily: 'Playfair Display, serif', fontWeight: 700, color: '#003366' }}
+          sx={{ color: 'primary.main' }} // Usando el tema
         >
           Navegando tus Dudas
         </Typography>
-        <Typography variant="h6" textAlign="center" color="text.secondary" sx={{ mb: 6, fontFamily: 'Montserrat, sans-serif' }}>
+        <Typography variant="h6" textAlign="center" color="text.secondary" sx={{ mb: 6 }}>
           Aquí respondemos algunas de las preguntas más comunes sobre nuestro colegio.
         </Typography>
-
-        {/* Acordeón de Preguntas */}
+        
         <Box>
           {faqData.map((faq) => (
-            <Accordion key={faq.id} sx={{ mb: 1, boxShadow: '0 2px 10px rgba(0,0,0,0.05)' }}>
+            // Usamos la prop 'elevation' en lugar de 'boxShadow' para consistencia
+            <Accordion key={faq.id} elevation={2} sx={{ mb: 1.5, borderRadius: '8px', '&:before': { display: 'none' } }}>
               <AccordionSummary
-                expandIcon={<ExpandMoreIcon />}
+                expandIcon={<ExpandMoreIcon color="primary" />} // Usamos la prop 'color'
                 aria-controls={`${faq.id}-content`}
                 id={`${faq.id}-header`}
               >
-                <Typography sx={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 700, color: '#003366' }}>
+                <Typography sx={{ fontWeight: 700, color: 'primary.main' }}> {/* Usando el tema */}
                   {faq.question}
                 </Typography>
               </AccordionSummary>
               <AccordionDetails>
-                <Typography sx={{ fontFamily: 'Montserrat, sans-serif', color: 'text.secondary' }}>
+                <Typography color="text.secondary" sx={{ lineHeight: 1.7 }}>
                   {faq.answer}
                 </Typography>
               </AccordionDetails>
@@ -69,29 +63,30 @@ const FaqPage = () => {
         {/* Caja de Contacto y Redes Sociales */}
         <Box 
           sx={{ 
-            mt: 8, 
-            p: 4, 
-            textAlign: 'center', 
-            backgroundColor: '#003366', 
-            color: '#ffffff', 
-            borderRadius: '10px'
+            mt: 8, p: 4, textAlign: 'center', 
+            backgroundColor: 'primary.main', // Usando el tema
+            color: 'common.white', // Usando el tema
+            borderRadius: '10px' 
           }}
         >
-          <Typography variant="h4" component="h3" gutterBottom sx={{ fontFamily: 'Playfair Display, serif' }}>
+          <Typography variant="h4" component="h3" gutterBottom>
             ¿Aún tienes preguntas?
           </Typography>
           <Typography sx={{ mb: 3, opacity: 0.9 }}>
             Nuestro equipo está listo para ayudarte. Conéctate con nosotros a través de nuestros canales oficiales.
           </Typography>
-          <Box display="flex" justifyContent="center" gap={4}>
-            <Link href="https://wa.me/TU_NUMERO_DE_TELEFONO" target="_blank" color="inherit" underline="hover" sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-              <WhatsAppIcon /> WhatsApp
+          <Box display="flex" justifyContent="center" gap={4} flexWrap="wrap">
+            <Link href={LINKEDIN_URL} target="_blank" color="inherit" underline="hover" sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+              <LinkedInIcon /> LinkedIn
             </Link>
-            <Link href="https://facebook.com/TU_PAGINA" target="_blank" color="inherit" underline="hover" sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+            <Link href={INSTAGRAM_URL} target="_blank" color="inherit" underline="hover" sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+              <InstagramIcon /> Instagram
+            </Link>
+            <Link href={FACEBOOK_URL} target="_blank" color="inherit" underline="hover" sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
               <FacebookIcon /> Facebook
             </Link>
-            <Link href="https://instagram.com/TU_PERFIL" target="_blank" color="inherit" underline="hover" sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-              <InstagramIcon /> Instagram
+            <Link href={WHATSAPP_URL} target="_blank" color="inherit" underline="hover" sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+              <WhatsAppIcon /> WhatsApp
             </Link>
           </Box>
         </Box>

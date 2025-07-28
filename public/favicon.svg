@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 80">
+  <!-- La Ola - Color Azul Atlantis -->
+  <path fill="#003366" d="M50,0 C22.4,0 0,22.4 0,50 C0,77.6 22.4,100 50,100 C50,70 70,50 100,50 C100,22.4 77.6,0 50,0 Z" transform="translate(0, -10) scale(1, 0.8)"/>
+  
+  <!-- Las Páginas del Libro - Color Oro del Descubrimiento -->
+  <g fill="#f0b429" transform="translate(0, -10)">
+    <path d="M55,45 L100,10 L90,50 Z"/>
+    <path d="M55,45 L100,20 L95,55 Z"/>
+    <path d="M55,45 L100,30 L100,60 Z"/>
+    <path d="M55,45 L100,40 L105,65 Z"/>
+    <path d="M55,45 L95,45 L110,70 Z"/>
+    <path d="M55,45 L90,50 L115,75 Z"/>
+  </g>
+</svg>

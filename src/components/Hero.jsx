@@ -1,86 +1,62 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next'; // <-- HERRAMIENTA IMPORTADA
 import { Box, Typography, Button, Container } from '@mui/material';
-
-// URL del logo transparente
-const logoUrl = 'https://i.ibb.co/prW8dKV3/logo.png';
-
-// URL del video de fondo. He elegido uno de olas suaves que funciona perfectamente en bucle.
-const videoBackgroundUrl = 'https://videos.pexels.com/video-files/853874/853874-hd_1920_1080_25fps.mp4';
+import { Link as RouterLink } from 'react-router-dom';
+import { HERO_VIDEO_URL, LOGO_URL_TRANSPARENT } from '../constants';
 
 const Hero = () => {
+  const { t } = useTranslation(); // <-- HERRAMIENTA ACTIVADA
+
   return (
-    <Box 
-      sx={{
-        height: '90vh',
-        position: 'relative', // Contenedor principal debe ser relativo
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        textAlign: 'center',
-        color: 'white',
-        overflow: 'hidden' // Esconde cualquier parte del video que se salga
-      }}
-    >
-      {/* Etiqueta de Video para el fondo */}
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline // Importante para móviles
-        style={{
-          position: 'absolute',
-          width: '100%',
-          height: '100%',
-          left: '50%',
-          top: '50%',
-          objectFit: 'cover', // Asegura que el video cubra todo el espacio
-          transform: 'translate(-50%, -50%)',
-          zIndex: -1 // Lo pone detrás de todo el contenido
-        }}
-      >
-        <source src={videoBackgroundUrl} type="video/mp4" />
-        Tu navegador no soporta videos HTML5.
+    <Box sx={{
+        height: '90vh', position: 'relative', display: 'flex', alignItems: 'center',
+        justifyContent: 'center', textAlign: 'center', color: 'common.white', overflow: 'hidden'
+    }}>
+      <video autoPlay loop muted playsInline style={{ position: 'absolute', width: '100%', height: '100%', left: '50%', top: '50%', objectFit: 'cover', transform: 'translate(-50%, -50%)', zIndex: -1 }}>
+        <source src={HERO_VIDEO_URL} type="video/mp4" />
       </video>
+      <Box sx={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'rgba(0, 51, 102, 0.5)' }} />
       
-      {/* Capa oscura para legibilidad */}
-      <Box sx={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'rgba(0, 31, 63, 0.5)' }} />
-      
-      <Container sx={{ position: 'relative' }}> {/* El contenido debe ser relativo para estar por encima */}
+      <Container sx={{ position: 'relative' }}>
         <Box mb={4}>
           <img 
-            src={logoUrl} 
+            src={LOGO_URL_TRANSPARENT} 
             alt="Logo del Colegio América de Atlantis" 
-            style={{ width: '150px', height: 'auto' }}
+            style={{ width: '150px', height: 'auto' }} 
           />
         </Box>
         
+        {/* ===== CAMBIO 1: TEXTO AHORA ES DINÁMICO ===== */}
         <Typography 
           variant="h2" 
           component="h1" 
           gutterBottom
-          sx={{ fontFamily: 'Playfair Display, serif', fontWeight: 700, color: '#f0b429' }}
+          sx={{ color: 'secondary.main' }}
         >
-          Descubre un océano de posibilidades.
+          {t('hero.slogan')}
         </Typography>
-        <Typography 
-          variant="h5" 
-          component="p"
-          sx={{ fontFamily: 'Montserrat, sans-serif', mb: 4 }}
-        >
-          Innovación, excelencia y profundidad humana.
+
+        {/* ===== CAMBIO 2: TEXTO AHORA ES DINÁMICO ===== */}
+        <Typography variant="h5" component="p" sx={{ mb: 4 }}>
+          {t('hero.subtitle')}
         </Typography>
+        
         <Button 
+          component={RouterLink}
+          to="/admisiones"
           variant="contained" 
           size="large"
+          color="secondary"
           sx={{
-            fontFamily: 'Montserrat, sans-serif',
             fontWeight: 700,
-            backgroundColor: '#f0b429',
-            color: '#003366',
-            '&:hover': { backgroundColor: '#ffc107' }
+            color: 'primary.main',
+            '&:hover': {
+              backgroundColor: 'secondary.light',
+            }
           }}
         >
-          Inicia tu Aventura
+          {/* ===== CAMBIO 3: TEXTO AHORA ES DINÁMICO ===== */}
+          {t('hero.ctaButton')}
         </Button>
       </Container>
     </Box>

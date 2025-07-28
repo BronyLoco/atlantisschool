@@ -1,0 +1,16 @@
+{
+  "navbar": {
+    "about": "Sobre Nosotros",
+    "programs": "Programas",
+    "admissions": "Admisiones",
+    "news": "Noticias",
+    "calendar": "Calendario",
+    "faq": "Preguntas",
+    "portal": "Portal de Acceso"
+  },
+  "hero": {
+    "slogan": "Descubre un océano de posibilidades.",
+    "subtitle": "Innovación, excelencia y profundidad humana.",
+    "ctaButton": "Inicia tu Aventura"
+  }
+}
